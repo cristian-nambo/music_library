@@ -1,70 +1,18 @@
-# Getting Started with Create React App
+Music lovers rejoice! In this activity, you will be building a music search and "catalog" system. This activity will reinforce experience with React fundamentals, specifically those pertaining to dataflow in React when utilizing fetch and managing state among components.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Our goal will be to build a website that will allow a user to search for an artist and see a list of songs. A user will be able to click on a song to open a "detail" view of that song.
 
-## Available Scripts
+Now let's take a moment to consider what variables we may track with state in our application:
 
-In the project directory, you can run:
+App
+Search: This will be our search term. We want to declare this as a property of "App" because we will make our API search happen at the App level so that the data is available to all children of the application.
+Data: The data from our API call should be stored in state so that we do not lose it when the app triggers a re-render.
+Message: It is good practice to have a state variable to capture any error or success messages that may emit or that we would expect to emit from the API call.
 
-### `npm start`
+SearchBar
+SearchTerm: This will make a bit more sense in practice, but we will need to store the search term somewhere as we type it. This is because we want to control the form. Otherwise we would have an uncontrolled form where the data would be handled by the DOM itself. We don't want to have to worry about implementing new, different hooks to reference the actual DOM itself, so instead we will "control" our form by having local state to represent the user's input.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Gallery
+Gallery itself will not need to track state!
+GalleryItem
+View: This will be a Boolean state variable that toggles the "detail" view of a given song.
