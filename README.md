@@ -4,6 +4,8 @@ Our goal will be to build a website that will allow a user to search for an arti
 
 Now let's take a moment to consider what variables we may track with state in our application:
 
+Day 1
+
 App
 Search: This will be our search term. We want to declare this as a property of "App" because we will make our API search happen at the App level so that the data is available to all children of the application.
 Data: The data from our API call should be stored in state so that we do not lose it when the app triggers a re-render.
@@ -16,3 +18,13 @@ Gallery
 Gallery itself will not need to track state!
 GalleryItem
 View: This will be a Boolean state variable that toggles the "detail" view of a given song.
+
+Day 2
+
+Continuing with our music library interface, this section of our code-along will handle building a form to enter custom search data. Here we will touch on the topic of controlled forms. We will see more about the inverse uncontrolled forms in a future lesson, so for now our focus will be a bit more tightly scoped.
+
+Our goal in this section of the code-along:
+
+Add our controlled form.
+Fetch custom data from our API.
+Render our data to the screen.
