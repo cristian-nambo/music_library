@@ -28,3 +28,23 @@ Our goal in this section of the code-along:
 Add our controlled form.
 Fetch custom data from our API.
 Render our data to the screen.
+
+Day 5
+
+Now that we have spent some time learning about the Context hook in React, we will be refactoring our Music Library code-along to implement Context!
+
+Our aim here will be to simplify our application and increase scalability by making some of our state variables "global" by using Context.
+
+We will not be adding any features in this code-along. Ideally, once we are done our application should have the same set of features that we started with. This code-along will allow us to see a different approach to accomplishing the same task!
+
+Before getting started, navigate to your music-library folder that you created for the last code-along. We will start by branching off of our existing project; we want to build these features in a separate feature branch. Let's plan to call it withContext.
+
+Planning
+Even when we are refactoring a project, we want to first take stock of what we are working with and determine our plan and the changes we want to make.
+
+Let's start with our components and consider what state properties they will be tracking in the new version.
+
+App: This file will still be the core of our application, and it will now be the context provider for both the searchTerm and data variables.
+SearchBar: We will adapt our searchBar to access the searchTerm variable from context. Further, we will plan to adapt our search bar to use an uncontrolled form submittal!
+Gallery: This component will be simplified and will gain access to the data object from context.
+GalleryItem: This component will remain largely unchanged. With this refactor, this component will still accept props.
